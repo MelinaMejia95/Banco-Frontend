@@ -1,0 +1,11 @@
+.login-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+}
+
+.card-center{
+    margin: auto;
+    width: 45rem;
+}

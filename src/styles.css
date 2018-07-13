@@ -6,3 +6,16 @@
     position: absolute;
     bottom: -.5rem;
 }
+
+.mydp {
+    margin-top: 4%;
+    background-color: white;
+    border-color: white !important;
+    border-bottom: 1px solid;
+    border-bottom-color: black !important;
+}
+
+input:not([type]):focus:not([readonly]){
+    border-bottom: 1px solid #0288d1 !important;
+    border-radius: 0 !important;
+}

@@ -9,9 +9,8 @@
           <div class="row">
             <div class="input-field col s12 m6 l6">
               <i class="material-icons prefix">star</i>
-              <input id="id" type="text" class="validate login-input" formControlName="id" pattern="^[0-9]+$" autofocus >
+              <input id="id" type="text" class="validate login-input" formControlName="id" pattern="^[0-9]+$" autofocus>
               <label for="id" class="label-login active">Identificación</label>
-              <div class="alert" *ngIf="!rForm.controls['id'].value && rForm.controls['id'].touched">{{ titleAlert }}</div> 
               <div class="alert" *ngIf="!rForm.controls['id'].value && rForm.controls['id'].touched">{{ titleAlert }}</div>            
             </div>
             <div class="input-field col s12 m6 l6">
@@ -29,10 +28,9 @@
                 <div class="alert" *ngIf="!rForm.controls['apellido'].value && rForm.controls['apellido'].touched">{{ titleAlert }}</div>            
             </div>
             <div class="input-field col s12 m6 l6">
-              <i class="material-icons prefix">person_pin</i>
-              <input id="apellido" type="text" class="validate login-input" formControlName="apellido" autofocus >
-              <label for="apellido" class="label-login">Fecha de nacimiento</label>
-              <div class="alert" *ngIf="!rForm.controls['apellido'].value && rForm.controls['apellido'].touched">{{ titleAlert }}</div>            
+              <my-date-picker name="fecha" [options]="myDatePickerOptions" (dateChanged)="onDateChanged($event)" class="validate" formControlName="fecha" required></my-date-picker>
+              <label for="fecha" class="label-login active">Fecha de nacimiento</label>
+              <div class="alert" *ngIf="!rForm.controls['fecha'].value && rForm.controls['fecha'].touched">{{ titleAlert }}</div>
           </div>
           </div>
         </form>

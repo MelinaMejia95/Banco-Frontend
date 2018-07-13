@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './/app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MyDatePickerModule } from 'mydatepicker';
+
 
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
@@ -22,7 +24,8 @@ import { HttpModule } from '@angular/http';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    MyDatePickerModule
   ],
   providers: [ ConnectionService ],
   bootstrap: [AppComponent]
