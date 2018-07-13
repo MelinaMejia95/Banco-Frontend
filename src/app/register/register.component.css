@@ -1,0 +1,50 @@
+.header-card {
+    padding: 0.5em 1em;
+}
+
+.welcome {
+    padding: 0.8em 0;
+    font-size: 1.8rem;
+}
+
+.login-button{
+    margin: auto;
+    display: block;
+    border: 1pt solid #283337;
+    color: #283337;
+    background-color: transparent;
+}
+
+.login-button:hover, .login-button:active,.login-button:focus{
+    background-color: #283337;
+    color: white;
+}
+
+.login-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+    width: 90vw;
+}
+
+.card-center{
+    margin: auto;
+    width: 36rem;
+}
+
+.input-field .label-login.active {
+    color: #0288d1 !important;
+  }
+
+.input-field input:focus {
+    color:#213031;
+    border-bottom-color: #0288d1 !important;
+    box-shadow: 0 1px 0 0 #0288d1;
+}
+
+.input-field .prefix.active {
+    color: #0288d1;
+    border-bottom: #0288d1;
+    box-shadow: #0288d1
+  } 

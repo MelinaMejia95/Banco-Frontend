@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+.alert {
+    font-size: 10px;
+    color: red;
+    position: absolute;
+    bottom: -.5rem;
+}
