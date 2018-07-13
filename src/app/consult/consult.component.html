@@ -7,13 +7,13 @@
         <form [formGroup]="rForm">
           <div class="row">
             <div class="input-field col s12 m6 l6">
-              <i class="material-icons prefix">star</i>
+              <i class="material-icons prefix">business</i>
               <input id="empresa" type="text" class="validate login-input" formControlName="empresa" autofocus >
               <label for="empresa" class="label-login active">Nombre Empresa</label> 
               <div class="alert" *ngIf="!rForm.controls['empresa'].value && rForm.controls['empresa'].touched">{{ titleAlert }}</div>        
             </div>
             <div class="input-field col s12 m6 l6">
-              <i class="material-icons prefix">star</i>
+              <i class="material-icons prefix">account_balance</i>
               <input id="nit" type="text" class="validate login-input" formControlName="nit" pattern="^[0-9]+$" autofocus>
               <label for="nit" class="label-login active">NIT Empresa</label>          
               <div class="alert" *ngIf="!rForm.controls['nit'].value && rForm.controls['nit'].touched">{{ titleAlert }}</div>        
@@ -21,14 +21,14 @@
           </div>
           <div class="row">
             <div class="input-field col s12 m6 l6">
-              <i class="material-icons prefix">star</i>
+              <i class="material-icons prefix">attach_money</i>
               <input id="salario" type="text" class="validate login-input" formControlName="salario" pattern="^[0-9]+$" autofocus #salario (ngModelChange)="validate(salario.value)">
               <label for="salario" class="label-login active">Salario Actual</label>       
               <div class="alert" *ngIf="!rForm.controls['salario'].value && rForm.controls['salario'].touched">{{ titleAlert }}</div>        
             </div>
             <div class="input-field col s12 m6 l6">
               <my-date-picker name="fecha" [options]="myDatePickerOptions" (dateChanged)="onDateChanged($event)" class="validate" formControlName="fecha" required></my-date-picker>
-              <label for="fecha" class="label-login active">Fecha de nacimiento</label>
+              <label for="fecha" class="label-login active">Fecha de ingreso</label>
               <div class="alert" *ngIf="!rForm.controls['fecha'].value && rForm.controls['fecha'].touched">{{ titleAlert }}</div>        
             </div>
           </div>

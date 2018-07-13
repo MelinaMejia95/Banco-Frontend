@@ -103,6 +103,9 @@ export class ConsultComponent implements OnInit {
         '',
         'warning'
       )
+      jQuery('#conectar').prop('disabled',true);
+    } else if (this.rForm.valid == true) {
+      jQuery('#conectar').prop('disabled',false);
     }
   }
 
