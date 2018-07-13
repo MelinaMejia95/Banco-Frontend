@@ -1,27 +1,30 @@
 <div class="row login-center">
   <div class="col s12">
-    <div class="card blue-grey darken-1 card-center">
-      <div class="card-content white-text">
+    <div class="card white card-center">
+      <div class="card-content">
         <span class="card-title">¡Consulta si tu crédito puede ser aprobado!</span>
         <p>Ingresa los siguientes datos</p>
         <form [formGroup]="rForm">
           <div class="row">
             <div class="input-field col s12 m6 l6">
               <i class="material-icons prefix">star</i>
-              <input id="empresa" type="text" class="validate login-input"  autofocus >
-              <label for="empresa" class="label-login active">Nombre Empresa</label>           
+              <input id="empresa" type="text" class="validate login-input" formControlName="empresa" autofocus >
+              <label for="empresa" class="label-login active">Nombre Empresa</label> 
+              <div class="alert" *ngIf="!rForm.controls['empresa'].value && rForm.controls['empresa'].touched">{{ titleAlert }}</div>        
             </div>
             <div class="input-field col s12 m6 l6">
               <i class="material-icons prefix">star</i>
-              <input id="nit" type="text" class="validate login-input"  autofocus >
-              <label for="nit" class="label-login active">NITEmpresa</label>           
+              <input id="nit" type="text" class="validate login-input" formControlName="nit" pattern="^[0-9]+$" autofocus>
+              <label for="nit" class="label-login active">NIT Empresa</label>          
+              <div class="alert" *ngIf="!rForm.controls['nit'].value && rForm.controls['nit'].touched">{{ titleAlert }}</div>        
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12 m6 l6">
               <i class="material-icons prefix">star</i>
-              <input id="salario" type="text" class="validate login-input"  autofocus >
-              <label for="salario" class="label-login active">Salario Actual</label>           
+              <input id="salario" type="text" class="validate login-input" formControlName="salario" pattern="^[0-9]+$" autofocus #salario (ngModelChange)="validate(salario.value)">
+              <label for="salario" class="label-login active">Salario Actual</label>       
+              <div class="alert" *ngIf="!rForm.controls['salario'].value && rForm.controls['salario'].touched">{{ titleAlert }}</div>        
             </div>
             <div class="input-field col s12 m6 l6">
               <my-date-picker name="fecha" [options]="myDatePickerOptions" (dateChanged)="onDateChanged($event)" class="validate" formControlName="fecha" required></my-date-picker>
@@ -31,8 +34,8 @@
           </div>
         </form>
       </div>
-      <div class="card-action">
-        <button id="conectar" class="btn waves-effect waves-light login-button" >
+      <div class="card-action cyan darken-4">
+        <button id="conectar" class="btn waves-effect waves-light login-button" [disabled]="!rForm.valid" (click)="consultCredit(rForm.value)">
           Consultar
           <i class="material-icons right">send</i>
         </button>

@@ -9,3 +9,13 @@
     margin: auto;
     width: 45rem;
 }
+
+.card .card-action:last-child {
+    text-align: center;
+}
+
+.mydp {
+    border-top: none;
+    border-left: none;
+}
+

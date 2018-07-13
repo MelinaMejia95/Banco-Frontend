@@ -6,6 +6,7 @@ import { ConsultComponent } from './consult/consult.component';
 const routes: Routes = [
   { path: '', component: RegisterComponent, pathMatch: 'full' },
   { path: 'consult', component: ConsultComponent },
+  { path: 'register', component: RegisterComponent },
 ];
 
 @NgModule({
